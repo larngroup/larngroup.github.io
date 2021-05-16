@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src = "https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
 </head>
+
 <body>
-    <canvas id = 'plot1'>
-    <script src = "funcoes.js"></script>
-    <script src = "config.js"></script>
-    <script src = "graficos.js"></script>
-    <script src = "main.js"></script>
+    <table style="border-collapse: collapse; width: 100%;" border="0">
+        <tbody>
+            <div>
+                <div id="plot_block">
+                    <div style="width: 33.3333%;">Grafico1</div>
+                    <div style="width: 33.3333%;">descriçao do Grafico1</div>
+                    <div id="plot_container">
+                        <canvas id='plot1'></canvas>
+                    </div>
+                </div>
+                <div id="plot_block">
+                    <div style="width: 33.3333%;">Grafico2</div>
+                    <div style="width: 33.3333%;">descriçao do Grafico2</div>
+                    <div id="plot_container">
+                        <canvas id='plot2'></canvas>
+                    </div>
+                </div>
+                <div id="plot_block">
+                    <div style="width: 33.3333%;">Grafico3</div>
+                    <div style="width: 33.3333%;">descriçao do Grafico3</div>
+                    <div id="plot_container">
+                        <canvas id='plot3'></canvas>
+                    </div>
+                </div>
+            </div>
+        </tbody>
+    </table>
+
+
+    <script src="funcoes.js"></script>
+    <script src="config.js"></script>
+    <script src="graficos.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

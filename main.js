@@ -8,5 +8,5 @@ const larg = window.innerWidth;
 document.body.style.overflowY = 'scroll';
 document.body.style.overflowX = 'scroll'; //talvez não seja a melhor maneira mas resolveu o reposicionamento
 for(let i = 0; i < graficos.length; i++) {
-    plotData("plot1", graficos[i].x, graficos[i].y, graficos[i].config, larg , alt-10);
+    plotData(graficos[i].id, graficos[i].x, graficos[i].y, graficos[i].config, larg , alt-10);
 }

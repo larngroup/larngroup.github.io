@@ -1,13 +1,13 @@
 const getOrCreateTooltip = (chart) => {
-    let tooltipEl = chart.canvas.parentNode.querySelector('div');
+    let tooltipEl = chart.canvas.parentNode.querySelector('tooltip');
     if (!tooltipEl) {
-      tooltipEl = document.createElement('div');
-      tooltipEl.style.background = 'rgba(0, 0, 0, 0.7)';
-      tooltipEl.style.borderRadius = '3px';
+      tooltipEl = document.createElement('tooltip');
+      //tooltipEl.style.background = 'rgba(0, 0, 0, 0.7)';
+      //tooltipEl.style.borderRadius = '3px';
       tooltipEl.style.color = 'white';
       tooltipEl.style.opacity = 1;
       tooltipEl.style.pointerEvents = 'none';
-      tooltipEl.style.position = 'absolute';
+      //tooltipEl.style.position = 'absolute';
       tooltipEl.style.transform = 'translate(-50%, 0)';
       tooltipEl.style.transition = 'all .1s ease';
   
@@ -42,24 +42,20 @@ const externalTooltipHandler = (context) => {
         
         const tableBody = document.createElement('tbody');
         bodyLines.forEach((body, i) => {
-            const colors = tooltip.labelColors[i];
             const smile_label = tooltip.dataPoints[0].raw.smiles;
             const ihead = document.createElement('ihead');
+            ihead.style.width = "100%";
             const smile_text = document.createTextNode(smile_label);
-            ihead.appendChild(smile_text);
+            
             const imagem = document.createElement('IMG');
             //console.log(tooltip.dataPoints[0].raw.id);
             imagem.src = "molecules/" + String(tooltip.dataPoints[0].raw.id) + ".png";
-            imagem.onload = function() {
-                max_img_width = Math.max(max_img_width, this.width);
-                //console.log(width);
-
-            }
-            console.log(max_img_width);
-            
+            const imagem_wrapper = document.createElement("div");
             //console.log(max_img_width);
             tableBody.appendChild(ihead);
-            tableBody.appendChild(imagem);
+            ihead.appendChild(smile_text);
+            tableBody.appendChild(imagem_wrapper);
+            imagem_wrapper.appendChild(imagem)
         });
   
         const tableRoot = tooltipEl.querySelector('table');

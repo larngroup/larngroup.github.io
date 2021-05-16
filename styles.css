@@ -1,0 +1,26 @@
+body{
+    background-color: #ffffff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas{
+    background-color: #5a5a5a10;
+    border-style: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+tooltip{
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+}
+
+#plot_container{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
