@@ -32,7 +32,6 @@ const externalTooltipHandler = (context) => {
         tooltipEl.style.opacity = 0;
         return;
     }
-    let max_img_width = 0;
     // Set Text
     if (tooltip.body) {
         const bodyLines = tooltip.body.map(b => b.lines);
@@ -76,8 +75,6 @@ const externalTooltipHandler = (context) => {
     tooltipEl.style.opacity = 1;
     tooltipEl.style.left = positionX + tooltip.caretX + 'px';
     //tooltipEl.style.right = positionX + tooltip.caretX + 'px';
-    
-    console.log(tooltipEl.querySelector('img').width);
     tooltipEl.style.top = positionY + tooltip.caretY + 'px';
     tooltipEl.style.font = tooltip.options.bodyFont.string;
     tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
